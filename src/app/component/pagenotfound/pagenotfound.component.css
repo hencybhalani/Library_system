@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    --linear-grad: linear-gradient(to right, #141E30, #243B55);
+    --grad-clr1: #141E30;
+    --grad-clr2: #243B55;
+}
+button, .icon, h1, h4, p, a {
+    /* Firefox */
+    -ms-user-select: none;      /* Internet Explorer/Edge */
+    user-select: none;          /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+  }
+  button, .icon, h1, h4, p, a {
+    cursor: default;  /* Arrow pointer cursor */
+    outline: none;    /* Remove outline when focused */
+  }
+  .icon {
+    cursor: pointer;  /* If you want the cursor to indicate clickable items */
+  }  
+ 
+body {
+    height: 100vh;
+    background: #f6f5f7;
+    display: flex;
+    place-content: center;
+    align-items: center;  /* Center vertically */
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+}
+.page-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    background-color: #f0f2f5; 
+    position: relative;
+      
+  }
+  
+.container{
+    position: relative;
+    width: 850px;
+    height: 520px;
+    background-color: #fff;
+    box-shadow:25px 30px 55px #5557;
+    border-radius: 13px;
+    overflow: hidden;
+    text-align: center;
+  
+}
+.form-container{
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    padding:0px 35px;
+    transition: all 0.6s ease-in-out;
+}
+.sign-up-container{
+    opacity: 0;
+    z-index: 1;
+}
+.sign-in-container{
+    z-index: 1;
+    
+}
+.info-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+
+
+button{
+    margin-top: 20px;
+    margin-bottom:40px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #141E30;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+button:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+.form-container button{
+    margin-top: 2px;
+    transition: 80ms ease-in;
+}
+
+.overlay-panel h1 {
+    color: #FFF;  /* Ensure h1 tags inside overlay panels are white */
+    margin: 0;    /* Remove any default margins */
+    line-height: 1.2;  /* Adjust line height to fit text in a single line */
+}
+.overlay-container{
+    position: absolute;
+    top: 0;
+    left:60%;
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 9;
+}
+
+.overlay{
+    position: relative;
+    background: url('../../../assets/image/new.jpg');
+    background-size: 33rem;
+    background-repeat: no-repeat;
+    color:#FFF;
+    margin-left: 26rem;
+    margin-top: 2rem;
+    left:-150%;
+    height: 100%;
+    width: 250%;
+    transition: transform 0.6s ease-in-out;
+
+}
+.overlay-panel h1 {
+    color: #FFF;
+    margin: 0;   
+    font-size: 30px;
+    line-height: 1.2;  
+    white-space: nowrap; 
+}
+.overlay-panel p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 25px 0 35px;
+    color: #FFF;
+}
+#button1{
+    background-color: #fff;
+    border-radius: 1px solid #fff;
+    color:#141E30;
+    margin-bottom: 8px;
+}
+.overlay-panel button {
+    border: 1px solid #FFF;  /* Add border to the buttons */
+    background: transparent;
+    color: #FFF;
+    padding: 12px 45px;
+    border-radius: 20px;  /* Ensure buttons have a rounded border */
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 20px;  /* Ensure proper spacing around buttons */
+    transition: 80ms ease-in;
+}
+.overlay-panel button:hover {
+    background: #FFF;
+    color: #141E30;
+}   
+.overlay-panel{
+    position: absolute;
+    display: flex;
+    color:#fff;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding:0px 40px;
+    text-align: center;
+    height: 100%;
+    width: 340px;
+    transition:0.6s ease-in-out;
+}
+.overlay-left{
+    right: 60%;
+    transform: translateX(-12%);
+}
+.overlay-right{
+    right: 0;
+    transform: translateX(0%);
+}
+h1 {
+    color: #141E30;
+    font-size: 24px; /* Decrease font size */
+    text-align: center; /* Center text */
+    text-decoration: underline;
+  }
+p{
+    padding: 0.3rem;
+    
+    font-size: 14px;
+    text-align: center;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 20px 0px 30px;
+}
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px; /* Space between items */
+}
+
+.info-item i {
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.info-item p {
+    margin: 0; /* Remove default margins from p */
+    text-align: left; /* Align text to the left */
+}

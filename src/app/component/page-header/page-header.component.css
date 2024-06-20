@@ -1,0 +1,36 @@
+mat-toolbar{
+       position: fixed;
+        background: white;
+        color: black;
+        top: 0;
+        left: 250px;
+        right: 0;
+        z-index: 1100;
+        display: flex;
+        justify-content: space-between;
+    
+    .spacer {
+        flex: 1 1 auto;
+    }
+    .user-info{
+        display: flex;
+        align-items: center;
+
+        .name{
+            margin-right: 1.5rem;
+        }
+        #button1{
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+        #button2{
+            
+            margin-right:2rem;
+        }
+        
+       
+    }
+}
+.mat-toolbar-row, .mat-toolbar-single-row{
+    width: 83rem !important;
+}

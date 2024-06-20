@@ -1,0 +1,22 @@
+<div class="container">
+    <header>
+      <i class="bx bxs-check-shield"></i>
+    </header>
+  
+    <h4>Enter OTP Code</h4>
+    <form >
+  
+      <div class="input-field">
+        <input type="number" maxlength="1" #digit1 (input)="moveToNext(digit1, digit2, null)" (keydown)="onBackspace($event, digit1, null)" />
+        <input type="number" maxlength="1" #digit2 (input)="moveToNext(digit2, digit3, digit1)" (keydown)="onBackspace($event, digit2, digit1)" />
+        <input type="number" maxlength="1" #digit3 (input)="moveToNext(digit3, digit4, digit2)" (keydown)="onBackspace($event, digit3, digit2)" />
+        <input type="number" maxlength="1" #digit4 (input)="moveToNext(digit4, null, digit3)" (keydown)="onBackspace($event, digit4, digit3)" />
+      </div>
+     
+    </form>
+    <div class="btn-group">
+      <button type="button" (click)="verifyOtps()">Verify OTP</button>
+      <button type="button" (click)="cancel()">Cancel</button>
+    </div>
+  </div>
+  

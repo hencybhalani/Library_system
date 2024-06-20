@@ -1,0 +1,103 @@
+<div class="page-container">
+    <div *ngIf="isLoading" class="spinner-container">
+      <div class="spinner"></div>
+    </div>
+    <div class="container" id="container" #container *ngIf="!isLoading">
+      <div class="form-container sign-up-container">
+        <form [formGroup]="_regform" (ngSubmit)="register()">
+          <h1>Create Account</h1>
+          
+          <div class="infield" [class.invalid]="isFieldInvalid(_regform, 'username')">
+            <i class="fas fa-user icon"></i>
+            <input type="text" formControlName="username" placeholder="UserName" id="username" />
+            <label for="username"></label>
+            <div *ngIf="isFieldInvalid(_regform, 'username')" class="error-message">Valid Username Required</div>
+          </div>
+  
+          <div class="infield" [class.invalid]="isFieldInvalid(_regform, 'email')">
+            <i class="fas fa-envelope icon"></i>
+            <input type="email" formControlName="email" placeholder="Email" id="email"/>
+            <label for="email"></label>
+            <div *ngIf="isFieldInvalid(_regform, 'email')" class="error-message">Valid Email Required</div>
+          </div>
+  
+          <div class="infield" [class.invalid]="isFieldInvalid(_regform, 'phone')">
+            <i class="fas fa-phone icon"></i>
+            <input type="text" formControlName="phone" placeholder="Phone" id="phone" />
+            <label for="phone"></label>
+            <div *ngIf="isFieldInvalid(_regform, 'phone')" class="error-message">Phone number must be 10 digits</div>
+          </div>
+  
+          <div class="infield" [class.invalid]="isFieldInvalid(_regform, 'department')">
+            <i class="fas fa-building icon"></i>
+            <input type="text" formControlName="department" placeholder="Department" id="department" />
+            <label for="department"></label>
+            <div *ngIf="isFieldInvalid(_regform, 'department')" class="error-message">Department is required</div>
+          </div>
+  
+          <div class="infield" [class.invalid]="isFieldInvalid(_regform, 'password')">
+            <i class="fas fa-lock icon"></i>
+            <input type="password" formControlName="password" placeholder="Password" id="password" />
+            <label for="password"></label>
+            <div *ngIf="isFieldInvalid(_regform, 'password')" class="error-message">Password must be at least 6 characters</div>
+          </div>
+  
+          <div class="infield" [class.invalid]="isFieldInvalid(_regform, 'confirmPassword') || _regform.hasError('mismatch')">
+            <i class="fas fa-lock icon"></i>
+            <input type="password" formControlName="confirmPassword" placeholder="Confirm Password" id="confirmPassword" />
+            <label for="confirmPassword"></label>
+            <div *ngIf="isFieldInvalid(_regform, 'confirmPassword')" class="error-message">Confirm Password is required</div>
+            <div *ngIf="_regform.hasError('mismatch') && !isFieldInvalid(_regform, 'confirmPassword')" class="error-message">Passwords must match</div>
+          </div>
+  
+          <button>Sign Up</button>
+        </form>
+      </div>
+  
+      <div class="form-container sign-in-container">
+        <form [formGroup]="_loginform" (ngSubmit)="login()">
+          <h1>Log In</h1>
+          <div class="social-container">
+            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <span>or use your account</span>
+  
+          <div class="infield" [class.invalid]="isFieldInvalid(_loginform, 'email')">
+            <i class="fas fa-envelope icon"></i>
+            <input type="email" formControlName="email" placeholder="Email" id="Lemail"/>
+            <label for="Lemail"></label>
+            <div *ngIf="isFieldInvalid(_loginform, 'email')" class="error-message">Valid email is required</div>
+          </div>
+  
+          <div class="infield" [class.invalid]="isFieldInvalid(_loginform, 'password')">
+            <i class="fas fa-lock icon"></i>
+            <input type="password" formControlName="password" placeholder="Password" id="Lpassword" />
+            <label for="Lpassword"></label>
+            <div *ngIf="isFieldInvalid(_loginform, 'password')" class="error-message">Password must be at least 6 characters</div>
+          </div>
+  
+          <a href="#" class="forgot">Forgot your password?</a>
+          <button>Log In</button>
+        </form>
+      </div>
+  
+      <div class="overlay-container" id="overlayCon">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1>Welcome Back!</h1>
+            <p>To keep connected with us please login with your personal info</p>
+            <button id="button1">LogIn In</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1>Hello, Friend!</h1>
+            <p>Enter your personal details and start journey with us</p>
+            <button id="button1">Sign Up</button>
+          </div>
+        </div>
+        <button id="overlayBtn" #overlayBtn></button>
+      </div>
+    </div>
+  </div>
+  

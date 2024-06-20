@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    --linear-grad: linear-gradient(to right, #141E30, #243B55);
+    --grad-clr1: #141E30;
+    --grad-clr2: #243B55;
+}
+button, .icon, h1, h4, p, a {
+    /* Firefox */
+    -ms-user-select: none;      /* Internet Explorer/Edge */
+    user-select: none;          /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+  }
+  button, .icon, h1, h4, p, a {
+    cursor: default;  /* Arrow pointer cursor */
+    outline: none;    /* Remove outline when focused */
+  }
+  .icon {
+    cursor: pointer;  /* If you want the cursor to indicate clickable items */
+  }  
+  .spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    z-index: 1000; /* Ensure it is on top of other elements */
+  }
+  
+  .spinner {
+    border: 12px solid #f3f3f3; /* Light grey */
+    border-top: 12px solid #243B55; /* Blue */
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+body {
+    height: 100vh;
+    background: #f6f5f7;
+    display: flex;
+    place-content: center;
+    align-items: center;  /* Center vertically */
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+}
+.page-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    background-color: #f0f2f5; 
+    position: relative;
+      
+  }
+  
+.container{
+    position: relative;
+    width: 850px;
+    height: 520px;
+    background-color: #fff;
+    box-shadow:25px 30px 55px #5557;
+    border-radius: 13px;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+}
+.form-container{
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    padding:0px 35px;
+    transition: all 0.6s ease-in-out;
+}
+.sign-up-container{
+    opacity: 0;
+    z-index: 1;
+}
+.sign-in-container{
+    z-index: 1;
+    
+}
+form{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 50px;
+}
+h1{
+    color:#141E30;
+}
+.social-container{
+    margin: 20px 0px;
+}
+.social-container a {
+    border: 1px solid #DDD;
+    border-radius: 50%;
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 5px;
+    height: 40px;
+    width: 40px;
+}
+span{
+    font-size: 12px;
+}
+.infield{
+    position: relative;
+    margin: 10px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.infield .icon {
+    position: absolute;
+    left: 10px;
+    font-size: 16px;
+    color: #141E30;
+    pointer-events: none; /* Icon color */
+}
+input{
+    width: 100%;
+    padding: 10px 12px 10px 40px; /* Add padding to the left to accommodate the icon */
+    height: 40px; /* Fixed height */
+    background-color: #f3f3f3;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    cursor: text; 
+}
+label{
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    width: 0%;
+    height:2px;
+    background:linear-gradient(to right, #141E30, #243B55);
+    transition: 0.3s;
+}
+input:focus ~ label{
+    width: 100%;
+}
+.infield.invalid input {
+    border-bottom: 2px solid red;
+}
+.infield input:focus {
+  border-color: #0000ff; /* Blue color on focus */
+}
+
+.infield.invalid input {
+  border-color: #ff0000; /* Red color when invalid */
+}
+.error-message {
+    color: red;
+    font-size: 12px;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    text-align: left;
+    pointer-events: none;
+  
+}
+.infield.invalid .error-message {
+    display: block;
+  }
+a{
+    color:#333;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 15px 0px;
+}
+a.forgot{
+    padding-bottom: 3px;
+    border-bottom: 2px solid #EEE;
+}
+button{
+    border-radius: 20px;
+    border: 1px solid #141E30;
+    background:#243B55;
+    color:#FFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.form-container button{
+    margin-top: 15px;
+    transition: 80ms ease-in;
+}
+.form-container button:hover{
+    background: #FFF;
+    color:#141E30;
+
+}
+.overlay-panel h1 {
+    color: #FFF;  /* Ensure h1 tags inside overlay panels are white */
+    margin: 0;    /* Remove any default margins */
+    line-height: 1.2;  /* Adjust line height to fit text in a single line */
+}
+.overlay-container{
+    position: absolute;
+    top: 0;
+    left:60%;
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 9;
+}
+#overlayBtn{
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    top:310px;
+    transform: translateX(-50%);
+    width: 143.67px;
+    height: 40px;
+    border: 1px solid #FFF;
+    background: transparent;
+    border-radius: 20px;
+}
+.overlay{
+    position: relative;
+    background: linear-gradient(to right, #141E30, #243B55) ;
+    color:#FFF;
+    left:-150%;
+    height: 100%;
+    width: 250%;
+    transition: transform 0.6s ease-in-out;
+
+}
+.overlay-panel h1 {
+    color: #FFF;
+    margin: 0;   
+    font-size: 30px;
+    line-height: 1.2;  
+    white-space: nowrap; 
+}
+.overlay-panel p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 25px 0 35px;
+    color: #FFF;
+}
+#button1{
+    background-color: #fff;
+    border-radius: 1px solid #fff;
+    color:#141E30;
+    margin-bottom: 8px;
+}
+.overlay-panel button {
+    border: 1px solid #FFF;  /* Add border to the buttons */
+    background: transparent;
+    color: #FFF;
+    padding: 12px 45px;
+    border-radius: 20px;  /* Ensure buttons have a rounded border */
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 20px;  /* Ensure proper spacing around buttons */
+    transition: 80ms ease-in;
+}
+.overlay-panel button:hover {
+    background: #FFF;
+    color: #141E30;
+}   
+.overlay-panel{
+    position: absolute;
+    display: flex;
+    color:#fff;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding:0px 40px;
+    text-align: center;
+    height: 100%;
+    width: 340px;
+    transition:0.6s ease-in-out;
+}
+.overlay-left{
+    right: 60%;
+    transform: translateX(-12%);
+}
+.overlay-right{
+    right: 0;
+    transform: translateX(0%);
+}
+h1 {
+    color: #141E30;
+    font-size: 24px; /* Decrease font size */
+    text-align: center; /* Center text */
+  }
+p{
+    font-size: 14px;
+    text-align: center;
+    font-weight: 300;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 25px 0px 35px;
+}
+.overlay-panel button{
+    border: none;
+    background-color: transparent;
+}
+.right-panel-active .overlay-container{
+    transform: translateX(-150%);
+}
+.right-panel-active .overlay{
+    transform: translateX(50%);
+}
+.right-panel-active .overlay-left{
+    transform: translateX(25%);
+}
+.right-panel-active .overlay-right{
+    transform: translateX(35%);
+}
+.right-panel-active .sign-in-container{
+    transform: translateX(66.7%);
+    opacity: 0;
+}
+.right-panel-active .sign-up-container{
+    transform: translateX(66.7%);
+    opacity: 1;
+    z-index: 5;
+    animation: show 0.6s;
+}
+@keyframes show{
+    0%, 50%{
+        opacity: 0;
+        z-index: 1;
+    }
+    50.1%,100%{
+        opacity: 1;
+        z-index: 5;
+    }
+}
+.btnScaled{
+    animation:scaleBtn 0.6s;
+}
+@keyframes scaleBtn {
+    0%{
+        width: 143.67px;
+    }
+    50%{
+        width:250px;
+    }
+    100%{
+        width:143.67px;
+    }
+}

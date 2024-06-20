@@ -1,0 +1,10 @@
+<mat-card>
+     <mat-card-content>
+     <h2> {{ panelName}} </h2>
+    </mat-card-content>
+</mat-card>
+<mat-nav-list>
+    @for(item of navItems; track navItems){
+        <a style="color: white !important;" routerLink="/{{item.link}}" routerLinkActive="active-link"><mat-icon>{{ item.icon }}</mat-icon>{{item.value}}</a>
+    }
+</mat-nav-list>
